@@ -195,4 +195,12 @@ public class CalvinGenerator extends DefaultCodegen implements CodegenConfig {
     //TODO: check that this logic is safe to escape quotation mark to avoid code injection
     return input.replace("\"", "\\\"");
   }
+
+  /**
+   * Initialize special character mapping
+   */
+  @Override
+  protected void initializeSpecialCharacterMapping() {
+    // Initialize special characters
+  }
 }
