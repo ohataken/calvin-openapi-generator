@@ -142,6 +142,12 @@ public class CalvinGenerator extends DefaultCodegen implements CodegenConfig {
         "Type1",      // replace these with your types
         "Type2")
     );
+
+    /**
+     * Type mapping between specific and the target language.
+     */
+    typeMapping.put("boolean", "boolean");
+    typeMapping.put("DateTime", "LocalDateTime");
   }
 
   /**
