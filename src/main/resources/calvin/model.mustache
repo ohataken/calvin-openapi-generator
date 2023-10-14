@@ -1,2 +1,33 @@
-# This is a sample model mustache template.
+{{#models}}
+{{#model}}
+package {{{packageName}}}.{{modelPackage}}.{{{classname}}}
 
+import org.json.JSONObject;
+
+public class {{classname}} {
+
+{{#vars}}
+    public {{dataType}} get{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}() {
+        return this.{{#lambda.camelcase}}parse_{{dataType}}{{/lambda.camelcase}}(this.json, "{{name}}");
+    }
+
+{{/vars}}
+    private boolean parseBoolean(JSONObject json, String key) {
+        return json.getBoolean(key);
+    }
+
+    private Integer parseInteger(JSONObject json, String key){
+        return json.getInteger(key);
+    }
+
+    private Long parseLong(JSONObject json, String key) {
+        return json.getLong(key);
+    }
+
+    private LocalDateTime parseLocalDateTime(String key) {
+        return LocalDateTime.parse(json.getString(key));
+    }
+
+}
+{{/model}}
+{{/models}}
