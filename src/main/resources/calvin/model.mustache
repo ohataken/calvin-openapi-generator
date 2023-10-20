@@ -12,18 +12,30 @@ public class {{classname}} {
     }
 
 {{/vars}}
+    /**
+     * support method.
+     */
     private boolean parseBoolean(JSONObject json, String key) {
         return json.getBoolean(key);
     }
 
+    /**
+     * support method.
+     */
     private Integer parseInteger(JSONObject json, String key){
         return json.getInteger(key);
     }
 
+    /**
+     * support method.
+     */
     private Long parseLong(JSONObject json, String key) {
         return json.getLong(key);
     }
 
+    /**
+     * support method.
+     */
     private LocalDateTime parseLocalDateTime(String key) {
         return LocalDateTime.parse(json.getString(key));
     }
