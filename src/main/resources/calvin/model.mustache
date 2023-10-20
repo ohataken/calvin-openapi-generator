@@ -7,6 +7,10 @@ import org.json.JSONObject;
 public class {{classname}} {
 
 {{#vars}}
+    public boolean has{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}() {
+        return this.json.has("{{name}}");
+    }
+
     public {{dataType}} get{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}() {
         return this.{{#lambda.camelcase}}parse_{{dataType}}{{/lambda.camelcase}}(this.json, "{{name}}");
     }
