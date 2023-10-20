@@ -15,6 +15,12 @@ public class {{classname}} {
         return {{#required}}true{{/required}}{{^required}}false{{/required}};
     }
 
+    public void assert{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}() throws NoSuchFieldException {
+        if (is{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}Required() && !has{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}()) {
+            throw new NoSuchFieldException();
+        }
+    }
+
     public {{dataType}} get{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}() {
         return this.{{#lambda.camelcase}}parse_{{dataType}}{{/lambda.camelcase}}(this.json, "{{name}}");
     }
