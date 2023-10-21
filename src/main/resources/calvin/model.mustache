@@ -70,7 +70,7 @@ public class {{classname}} {
     /**
      * support method.
      */
-    private LocalDateTime parseLocalDateTime(String key) {
+    private LocalDateTime parseLocalDateTime(JSONObject json, String key) {
         return LocalDateTime.parse(json.getString(key));
     }
 
