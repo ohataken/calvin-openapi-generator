@@ -12,6 +12,12 @@ public class {{classname}} {
         this.json = json;
     }
 
+    public isValid() {
+        {{#vars}}
+        assert{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}();
+        {{/vars}}
+    }
+
 {{#vars}}
     public boolean has{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}() {
         return this.json.has("{{name}}");
@@ -23,7 +29,7 @@ public class {{classname}} {
 
     public void assert{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}() throws NoSuchFieldException {
         if (is{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}Required() && !has{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}()) {
-            throw new NoSuchFieldException();
+            throw new NoSuchFieldException(this.json.toString());
         }
     }
 
