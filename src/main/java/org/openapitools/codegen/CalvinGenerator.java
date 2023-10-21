@@ -169,7 +169,7 @@ public class CalvinGenerator extends DefaultCodegen implements CodegenConfig {
    * instantiated
    */
   public String modelFileFolder() {
-    return outputFolder + "/" + sourceFolder + "/" + modelPackage().replace('.', File.separatorChar);
+    return outputFolder + "/" + modelPackage().replace('.', File.separatorChar);
   }
 
   /**
@@ -178,7 +178,7 @@ public class CalvinGenerator extends DefaultCodegen implements CodegenConfig {
    */
   @Override
   public String apiFileFolder() {
-    return outputFolder + "/" + sourceFolder + "/" + apiPackage().replace('.', File.separatorChar);
+    return outputFolder + "/" + apiPackage().replace('.', File.separatorChar);
   }
 
   /**
