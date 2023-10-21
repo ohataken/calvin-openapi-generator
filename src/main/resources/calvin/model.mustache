@@ -6,6 +6,12 @@ import org.json.JSONObject;
 
 public class {{classname}} {
 
+    private JSONObject json;
+
+    public {{classname}}(JSONObject json) {
+        this.json = json;
+    }
+
 {{#vars}}
     public boolean has{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}() {
         return this.json.has("{{name}}");
