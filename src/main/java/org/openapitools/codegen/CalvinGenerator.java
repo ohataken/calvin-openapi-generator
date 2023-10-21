@@ -139,8 +139,11 @@ public class CalvinGenerator extends DefaultCodegen implements CodegenConfig {
      */
     languageSpecificPrimitives = new HashSet<String>(
       Arrays.asList(
-        "Type1",      // replace these with your types
-        "Type2")
+        "boolean",
+        "integer",
+        "number",
+        "string",
+        "DateTime")
     );
 
     /**
