@@ -12,7 +12,7 @@ public class {{classname}} {
         this.json = json;
     }
 
-    public isValid() {
+    public void isValid() {
         {{#vars}}
         assert{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}();
         {{/vars}}
