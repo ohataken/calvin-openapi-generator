@@ -3,6 +3,7 @@
 package {{modelPackage}};
 
 import org.json.JSONObject;
+import org.json.JSONArray;
 import java.time.LocalDateTime;
 
 public class {{classname}} {
@@ -72,6 +73,13 @@ public class {{classname}} {
      */
     private LocalDateTime parseLocalDateTime(JSONObject json, String key) {
         return LocalDateTime.parse(json.getString(key));
+    }
+
+    /**
+     * support method.
+     */
+    private JSONArray parseList(JSONObject json, String key) {
+        return json.getJSONArray(key);
     }
 
 }
