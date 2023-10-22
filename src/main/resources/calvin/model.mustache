@@ -89,6 +89,13 @@ public class {{classname}} {
         return json.getJSONArray(key);
     }
 
+    /**
+     * support method.
+     */
+    private JSONObject parseJSONObject(JSONObject json, String key) {
+        return json.getJSONObject(key);
+    }
+
 }
 {{/model}}
 {{/models}}
