@@ -35,8 +35,8 @@ public class {{classname}} {
         }
     }
 
-    public {{dataType}} get{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}() {
-        return this.{{#lambda.camelcase}}parse_{{dataType}}{{/lambda.camelcase}}(this.json, "{{name}}");
+    public {{#isPrimitiveType}}{{dataType}}{{/isPrimitiveType}}{{^isPrimitiveType}}{{#isContainer}}{{dataType}}{{/isContainer}}{{^isContainer}}JSONObject{{/isContainer}}{{/isPrimitiveType}} get{{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}() {
+        return this.parse{{#lambda.pascalcase}}{{#isPrimitiveType}}{{dataType}}{{/isPrimitiveType}}{{^isPrimitiveType}}{{#isContainer}}{{dataType}}{{/isContainer}}{{^isContainer}}JSONObject{{/isContainer}}{{/isPrimitiveType}}{{/lambda.pascalcase}}(this.json, "{{name}}");
     }
 
 {{/vars}}
@@ -85,7 +85,7 @@ public class {{classname}} {
     /**
      * support method.
      */
-    private JSONArray parseList(JSONObject json, String key) {
+    private JSONArray parseJSONArray(JSONObject json, String key) {
         return json.getJSONArray(key);
     }
 

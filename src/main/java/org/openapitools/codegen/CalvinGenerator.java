@@ -143,6 +143,8 @@ public class CalvinGenerator extends DefaultCodegen implements CodegenConfig {
         "integer",
         "number",
         "string",
+        "long",
+        "double",
         "DateTime")
     );
 
@@ -150,6 +152,8 @@ public class CalvinGenerator extends DefaultCodegen implements CodegenConfig {
      * Type mapping between specific and the target language.
      */
     typeMapping.put("boolean", "boolean");
+    typeMapping.put("array", "JSONArray");
+    typeMapping.put("object", "JSONObject");
     typeMapping.put("DateTime", "LocalDateTime");
   }
 
