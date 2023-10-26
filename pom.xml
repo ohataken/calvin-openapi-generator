@@ -125,4 +125,11 @@
         <maven-plugin-version>1.0.0</maven-plugin-version>
         <junit-version>4.13.2</junit-version>
     </properties>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub ohataken Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/ohataken/calvin-openapi-generator</url>
+        </repository>
+    </distributionManagement>
 </project>
